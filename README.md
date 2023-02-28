@@ -35,6 +35,10 @@ const vmModules: VMModule[] = [
           ai: 'Temperature is {{ weather.temp.cur }}°C.'
         },
         {
+          human: "What's the temperature feels like?",
+          ai: 'Temperature feels like {{ weather.feelsLike.cur }}°C.'
+        },
+        {
           human: 'What is the wind speed?',
           ai: 'Wind speed is {{ weather.wind.speed }} m/s.'
         }
@@ -53,7 +57,7 @@ const middlewares = [getVMMiddleware(vmModules)]
 const context = ['Your name is Ava.']
 
 const examples: Example[] = [
-  { human: 'Your name?', ai: 'My name is Ava.' }
+  { human: 'What is your name?', ai: 'My name is Ava.' }
 ]
 ```
 
@@ -61,7 +65,7 @@ Let's try it:
 
 ```typescript
 const output = await ask(
-  "Hey! What's your name? What's the temperature feels like outside? Also can you tell me wind speed?",
+  "Hey! What's your name? What's the temperature feels like outside? Also can you tell me wind speed in km/h",
   {
     context,
     examples
@@ -72,19 +76,32 @@ const output = await ask(
 console.log(output)
 ```
 
-Output:
+AI Output:
+
+```javascript
+Hi there! My name is Ava. Temperature feels like {{ weather.feelsLike.cur }}°C. Wind speed is {{ (weather.wind.speed * 3.495).toFixed(2) }} km/h.
+```
+
+_GPT-3 provided template with m/s to km/h conversion, for example you can add middleware asking GPT-3 to convert all of the measuring systems to user country native ones._
+
+Rendered output:
 
 ```text
-Hi there! My name is Ava. Temperature feels like 2.94°C and wind speed is 1.03 m/s.
+Hi there! My name is Ava. Temperature feels like 0.21°C. Wind speed is 10.79 km/h.
 ```
 
 ## TODO
 
-- [ ] Add more examples
+- [ ] More examples
 - [ ] Create an documentation
 - [ ] Create a adapters for other platforms (Telegram, Discord, Slack, etc.)
 - [ ] Create a web interface
 - [ ] Ship in a Docker container
+- [ ] Conversation History and Context
+- [ ] Multi language support (DeepL API)
+- [ ] User profiles, groups
+- [ ] RBAC on top of groups and Middleware limitations
+- [ ] User custom extensions
 
 ## Legal
 
