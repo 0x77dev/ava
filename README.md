@@ -100,7 +100,7 @@ Hi there! My name is Ava. Temperature feels like 0.21°C. Wind speed is 10.79 km
 - [ ] Add conversation history store and context for GPT-3.0
 - [ ] Add multi language support (DeepL API middleware)
 - [ ] Add user profiles and user groups
-  - [ ] RBAC on top of groups and Middleware limitations
+  - [ ] RBAC on top of groups and limit VM/GPT-3 context based on user group
 - [ ] Allow user to add custom extensions and personalize Ava
 
 ## Legal
