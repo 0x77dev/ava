@@ -83,6 +83,8 @@ Hi there! My name is Ava. Temperature feels like 2.94°C and wind speed is 1.03 
 - [ ] Add more examples
 - [ ] Create an documentation
 - [ ] Create a adapters for other platforms (Telegram, Discord, Slack, etc.)
+- [ ] Create a web interface
+- [ ] Ship in a Docker container
 
 ## Legal
 
