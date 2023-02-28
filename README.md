@@ -1,6 +1,6 @@
 # Ava
 
-**Work in progress:** Based on the GPT-3 ([OpenAI API](https://beta.openai.com/docs/api-reference/introduction)) and uses JavaScript Virtual Machine with templating techniques to extend it's abilities. Probably this is the easiest way to create your own virtual assistant that can be extended using simple human language and extended VM context.
+**Work in progress:** Based on the GPT-3 ([OpenAI API](https://beta.openai.com/docs/api-reference/introduction)) and uses JavaScript Virtual Machine with templating techniques to extend it's abilities. Probably this is the easiest way to create your own virtual assistant that can be extended using natural language and custom VM context.
 
 ## Why?
 
