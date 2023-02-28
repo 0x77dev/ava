@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   main:
-    name: lint, create issues, and upload security reports
+    name: lint and create issues
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -22,8 +22,7 @@ jobs:
           lfs: true
           fetch-depth: 2
 
-      - name: TODO to Issue
-        uses: alstr/todo-to-issue-action@v4
+      - uses: alstr/todo-to-issue-action@v4
         with:
           AUTO_ASSIGN: true
 
@@ -32,15 +31,5 @@ jobs:
           node-version: 18.x
 
       - run: yarn install
-
-      - name: nodejsscan scan
-        uses: ajinabraham/njsscan-action@7237412fdd36af517e2745077cedbf9d6900d711
-        with:
-          args: '. --sarif --output /tmp/nodejsscan.sarif || true'
-
-      - name: upload njsscan report
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: /tmp/nodejsscan.sarif
 
       - run: yarn lint
