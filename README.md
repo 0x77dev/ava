@@ -82,7 +82,7 @@ AI Output:
 Hi there! My name is Ava. Temperature feels like {{ weather.feelsLike.cur }}°C. Wind speed is {{ (weather.wind.speed * 3.495).toFixed(2) }} km/h.
 ```
 
-_GPT-3 provided template with m/s to km/h conversion, for example you can add middleware asking GPT-3 to convert all of the measuring systems to user country native ones._
+✨ _GPT-3 provided template with m/s to km/h conversion, for example you can add middleware asking GPT-3 to convert all of the measuring systems to user country native ones._ ✨
 
 Rendered output:
 
@@ -92,16 +92,16 @@ Hi there! My name is Ava. Temperature feels like 0.21°C. Wind speed is 10.79 km
 
 ## TODO
 
-- [ ] More examples
-- [ ] Create an documentation
-- [ ] Create a adapters for other platforms (Telegram, Discord, Slack, etc.)
+- [ ] Add more examples like weather
+- [ ] Add adapters for other platforms (Telegram, Discord, Slack, etc.)
 - [ ] Create a web interface
+  - [ ] Create an documentation using Docus
 - [ ] Ship in a Docker container
-- [ ] Conversation History and Context
-- [ ] Multi language support (DeepL API)
-- [ ] User profiles, groups
-- [ ] RBAC on top of groups and Middleware limitations
-- [ ] User custom extensions
+- [ ] Add conversation history store and context for GPT-3.0
+- [ ] Add multi language support (DeepL API middleware)
+- [ ] Add user profiles and user groups
+  - [ ] RBAC on top of groups and Middleware limitations
+- [ ] Allow user to add custom extensions and personalize Ava
 
 ## Legal
 
