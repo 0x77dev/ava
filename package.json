@@ -1,0 +1,57 @@
+{
+  "name": "ava",
+  "displayName": "Ava",
+  "repository": "https://github.com/0x77dev/ava",
+  "author": "Mykhailo Marynenko <mykhailo@0x77.dev>",
+  "license": "GPL-3.0",
+  "type": "module",
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@tsconfig/node18-strictest-esm": "^1.0.1",
+    "@types/eslint": "^8",
+    "@types/lodash.merge": "^4",
+    "@types/node": "^18.14.2",
+    "@types/prettier": "^2",
+    "@types/set-value": "^4",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": ">=7",
+    "lint-staged": ">=10",
+    "pinst": ">=2",
+    "prettier": ">=2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node .",
+    "lint": "eslint . --cache --fix --ext .ts,.tsx",
+    "pretest": "yarn run lint",
+    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\"",
+    "posttest": "yarn run format",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
+  },
+  "packageManager": "yarn@3.4.1",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "lodash.merge": "^4.6.2",
+    "openai": "^3.1.0",
+    "openweather-api-node": "^2.1.0",
+    "set-value": "^4.1.0",
+    "vm2": "^3.9.14",
+    "zod": "^3.20.6"
+  },
+  "lint-staged": {
+    "*.{ts,js}": "eslint --cache --fix",
+    "*.{ts,js,json,md}": "prettier --write"
+  }
+}
