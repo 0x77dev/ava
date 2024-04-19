@@ -1,0 +1,16 @@
+{
+  "name": "@ava/oai-openapi",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "generate": "bun run scripts/generate.ts",
+    "postinstall": "bun --bun run generate"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "openapi-typescript-codegen": "^0.29.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

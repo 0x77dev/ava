@@ -7,7 +7,7 @@
     "packages/*",
     "skills/*",
     "docs",
-    "oai"
+    "server"
   ],
   "resolutions": {
     "typescript": "^5.0.0",

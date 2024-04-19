@@ -1,15 +1,19 @@
 {
-  "name": "@ava/oai",
+  "name": "server",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
     "@ava/lang": "workspace:../packages/lang",
-    "@ava/skills-homeassistant": "workspace:../skills/homeassistant",
+    "@ava/oai-openapi": "workspace:../packages/oai-openapi",
+    "@ava/skills-homeassistant": "workspace:../packages/skills-homeassistant",
     "@bogeychan/elysia-logger": "^0.0.21",
+    "@elysiajs/swagger": "^1.0.3",
     "elysia": "latest",
+    "elysia-autoload": "^0.2.3",
+    "elysia-autoroutes": "^0.5.0",
+    "uuid": "^9.0.1",
     "znv": "^0.4.0",
     "zod": "^3.22.5"
   },

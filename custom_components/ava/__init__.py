@@ -167,20 +167,20 @@ class OpenAIAgent(conversation.AbstractConversationAgent):
                 response=intent_response, conversation_id=conversation_id
             )
 
-        messages.append(query_response.message.model_dump(exclude_none=True))
+        messages.append(query_response.message)
         self.history[conversation_id] = messages
 
         self.hass.bus.async_fire(
             EVENT_CONVERSATION_FINISHED,
             {
-                "response": query_response.response.model_dump(),
+                "response": query_response.message,
                 "user_input": user_input,
                 "messages": messages,
             },
         )
 
         intent_response = intent.IntentResponse(language=user_input.language)
-        intent_response.async_set_speech(query_response.message.content)
+        intent_response.async_set_speech(query_response.message)
         return conversation.ConversationResult(
             response=intent_response, conversation_id=conversation_id
         )
@@ -190,7 +190,7 @@ class OpenAIAgent(conversation.AbstractConversationAgent):
     ):
         raw_prompt = self.entry.options.get(CONF_PROMPT, DEFAULT_PROMPT)
         prompt = self._async_generate_prompt(raw_prompt, exposed_entities, user_input)
-        return {"role": "system", "content": prompt}
+        return {"role": "user", "content": prompt}
 
     def _async_generate_prompt(
         self,
@@ -247,8 +247,6 @@ class OpenAIAgent(conversation.AbstractConversationAgent):
             messages=messages,
             user=user_input.conversation_id,
         )
-
-        _LOGGER.info("Response %s", response.model_dump(exclude_none=True))
 
         choice: Choice = response.choices[0]
         message = choice.message
