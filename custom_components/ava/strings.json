@@ -1,0 +1,40 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "name": "[%key:common::config_flow::data::name%]",
+          "api_key": "[%key:common::config_flow::data::api_key%]",
+          "base_url": "[%key:common::config_flow::data::base_url%]",
+          "api_version": "[%key:common::config_flow::data::api_version%]",
+          "organization": "[%key:common::config_flow::data::organization%]",
+          "skip_authentication": "[%key:common::config_flow::data::skip_authentication%]"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+      "unknown": "[%key:common::config_flow::error::unknown%]"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "prompt": "Prompt Template",
+          "model": "Completion Model",
+          "max_tokens": "Maximum tokens to return in response",
+          "temperature": "Temperature",
+          "top_p": "Top P",
+          "max_function_calls_per_conversation": "Maximum function calls per conversation",
+          "functions": "Functions",
+          "attach_username": "Attach Username to Message",
+          "use_tools": "Use Tools",
+          "context_threshold": "Context Threshold",
+          "context_truncate_strategy": "Context truncation strategy when exceeded threshold"
+        }
+      }
+    }
+  }
+}

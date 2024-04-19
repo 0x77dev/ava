@@ -12,8 +12,6 @@ export const createAssistant = async (tools: ToolInterface[]) => {
   })
 }
 
-export { DynamicStructuredTool, DynamicTool, type ToolInterface }
-
 export const formatAnswer = (answer: ElementCompact) => {
   return js2xml(answer, {
     compact: true,
@@ -22,3 +20,6 @@ export const formatAnswer = (answer: ElementCompact) => {
     ignoreInstruction: true,
   })
 }
+
+export { DynamicStructuredTool, DynamicTool, type ToolInterface }
+export { AIMessage, SystemMessage, HumanMessage } from "@langchain/core/messages"

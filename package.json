@@ -6,7 +6,8 @@
   "workspaces": [
     "packages/*",
     "skills/*",
-    "docs"
+    "docs",
+    "oai"
   ],
   "resolutions": {
     "typescript": "^5.0.0",
