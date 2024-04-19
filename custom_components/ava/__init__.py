@@ -36,11 +36,9 @@ from homeassistant.util import ulid
 from .const import (
     CONF_ATTACH_USERNAME,
     CONF_BASE_URL,
-    CONF_CHAT_MODEL,
     CONF_PROMPT,
     CONF_SKIP_AUTHENTICATION,
     DEFAULT_ATTACH_USERNAME,
-    DEFAULT_CHAT_MODEL,
     DEFAULT_PROMPT,
     DEFAULT_SKIP_AUTHENTICATION,
     DOMAIN,
@@ -147,7 +145,7 @@ class OpenAIAgent(conversation.AbstractConversationAgent):
         messages.append(user_message)
 
         try:
-            query_response = await self.query(user_input, messages, exposed_entities, 0)
+            query_response = await self.query(user_input, messages)
         except OpenAIError as err:
             _LOGGER.error(err)
             intent_response = intent.IntentResponse(language=user_input.language)
@@ -242,11 +240,10 @@ class OpenAIAgent(conversation.AbstractConversationAgent):
         messages
     ) -> OpenAIQueryResponse:
         """Process a sentence."""
-        model = self.entry.options.get(CONF_CHAT_MODEL, DEFAULT_CHAT_MODEL)
-        _LOGGER.info("Prompt for %s: %s", model, messages)
+        _LOGGER.info("Prompt %s", messages)
 
         response: ChatCompletion = await self.client.chat.completions.create(
-            model=model,
+            model="ava",
             messages=messages,
             user=user_input.conversation_id,
         )

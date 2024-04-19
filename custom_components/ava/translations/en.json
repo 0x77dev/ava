@@ -9,7 +9,9 @@
       "user": {
         "data": {
           "name": "Name",
-          "base_url": "Base Url"
+          "api_key": "API Key",
+          "base_url": "Base Url",
+          "skip_authentication": "Skip Authentication"
         }
       }
     }

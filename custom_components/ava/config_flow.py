@@ -19,10 +19,8 @@ from homeassistant.helpers.selector import (
 )
 
 from .const import (
-    CONF_API_VERSION,
     CONF_ATTACH_USERNAME,
     CONF_BASE_URL,
-    CONF_ORGANIZATION,
     CONF_PROMPT,
     CONF_SKIP_AUTHENTICATION,
     DEFAULT_ATTACH_USERNAME,
@@ -62,8 +60,6 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> None:
     """
     api_key = data[CONF_API_KEY]
     base_url = data.get(CONF_BASE_URL)
-    api_version = data.get(CONF_API_VERSION)
-    organization = data.get(CONF_ORGANIZATION)
     skip_authentication = data.get(CONF_SKIP_AUTHENTICATION)
 
     if base_url == DEFAULT_CONF_BASE_URL:
