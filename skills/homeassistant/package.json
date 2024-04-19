@@ -1,0 +1,18 @@
+{
+  "name": "@ava/skills-homeassistant",
+  "module": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "@ava/lang": "workspace:../../packages/lang",
+    "crc-32": "^1.2.2",
+    "home-assistant-js-websocket": "^9.2.1",
+    "znv": "^0.4.0",
+    "zod": "^3.22.5"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
