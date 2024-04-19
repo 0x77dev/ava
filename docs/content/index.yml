@@ -1,0 +1,64 @@
+title: 'Ava'
+description: Self-hosted personal assistant in minutes with built-in Home Assistant integration and great extensibility and customizability.
+navigation: false
+hero:
+  title: 'Host your own assistant'
+  description: 'Self-hosted personal assistant in minutes with built-in Home Assistant integration and great extensibility and customizability.'
+  orientation: horizontal
+  headline:
+    label: Under active development
+    to: https://github.com/0x77dev/ava
+    icon: i-ph-warning-duotone
+    color: amber
+  links:
+    - label: Get started
+      icon: i-heroicons-arrow-right-20-solid
+      trailing: true
+      to: '/getting-started'
+      size: lg
+    - label: GitHub
+      icon: i-simple-icons-github
+      size: lg
+      color: gray
+      to: https://github.com/0x77dev/ava
+      target: _blank
+  code: |
+    ```bash [Terminal]
+    # Home Assistant OS
+    # TODO: Installation script
+    ```
+features:
+  title: 'All-in-one tool to host your own assistant'
+  links:
+    - label: 'Get started'
+      trailingIcon: 'i-heroicons-arrow-right-20-solid'
+      color: 'gray'
+      to: '/getting-started'
+      target: '_blank'
+      size: lg
+  items:
+    # TODO: add "to" links
+    - title: 'Supports almost all major LLMs'
+      description: 'Support for OpenAI, Anthropic, Llama.cpp and Ollama out of the box.'
+      icon: 'i-ph-brain-duotone'
+      target: '_blank'
+    - title: 'Built-in Home Assistant integration'
+      description: 'Built-in Home Assistant integration for easy setup and control of your smart home.'
+      icon: 'i-simple-icons-homeassistant'
+      target: '_blank'
+    - title: 'Extensible using webhooks'
+      description: 'Exposes ability for assistant to perform actions using simple HTTP calls.'
+      icon: 'i-heroicons-sparkles-20-solid'
+      target: '_blank'
+    - title: 'Customizable'
+      description: 'Great level of customizability with almost evebything being configurable using environment variables.'
+      icon: 'i-ph-compass-tool-duotone'
+      target: '_blank'
+    - title: 'Fully private'
+      description: 'All of the tools and services for Ava to work can be self-hosted and isolated from the internet.'
+      icon: 'i-ph-security-camera-duotone'
+      target: '_blank'
+    - title: 'OpenAI compatible endpoints'
+      description: 'Chat with your Ava using OpenAI compatible endpoints.'
+      icon: 'i-simple-icons-openai'
+      target: '_blank'

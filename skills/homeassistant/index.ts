@@ -9,9 +9,3 @@ export const createHomeAssistantToolkit = async (): Promise<ToolInterface[]> => 
     await call()
   ]
 }
-
-const assistant = await createAssistant(await createHomeAssistantToolkit())
-
-console.log(await assistant.invoke({
-  input: 'turn off the lights in bedroom area',
-}))

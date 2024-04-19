@@ -5,7 +5,8 @@
   "license": "GPL-3.0",
   "workspaces": [
     "packages/*",
-    "skills/*"
+    "skills/*",
+    "docs"
   ],
   "resolutions": {
     "typescript": "^5.0.0",
