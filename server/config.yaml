@@ -1,11 +1,12 @@
 name: "Ava Server"
-description: "Self-hosted personal assistant in minutes with built-in Home Assistant integration and great extensibility and customizability."
+description: "Self-hosted personal assistant in minutes with built-in Home Assistant integration and great extensibility and customizability"
 version: "0.0.0"
 slug: "server"
 init: false
 arch:
   - aarch64
   - amd64
+url: https://ava.0x77.dev
 ports:
   2881/tcp: 2881
 image: ghcr.io/0x77dev/ava/server
