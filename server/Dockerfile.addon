@@ -31,14 +31,14 @@ RUN curl -J -L -o /tmp/bashio.tar.gz \
 EXPOSE 2881
 
 LABEL \
-  io.hass.name="ava Server for ${BUILD_ARCH}" \
-  io.hass.description="ava Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
+  io.hass.name="ava server for ${BUILD_ARCH}" \
+  io.hass.description="ava server Add-on: ${BUILD_ARCH} bun debian v1 image" \
   io.hass.arch="${BUILD_ARCH}" \
   io.hass.type="base" \
   io.hass.version=${BUILD_VERSION} \
   io.hass.base.version=${BUILD_VERSION} \
   io.hass.base.name="debian" \
-  io.hass.base.image="ghcr.io/0x77dev/ava/server" \
+  io.hass.base.image="ghcr.io/0x77dev/ava/hass_ava_server" \
   maintainer="Mykhailo Marynenko <mykhailo@0x77.dev>" \
   org.opencontainers.image.title="ava Server for ${BUILD_ARCH}" \
   org.opencontainers.image.description="ava Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
