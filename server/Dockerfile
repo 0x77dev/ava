@@ -1,5 +1,5 @@
 ARG BUILD_FROM=oven/bun:1-debian
-FROM ${BUILD_FROM}
+FROM ${BUILD_FROM} as base
 
 FROM base as workspace
 ENV NODE_ENV=production
