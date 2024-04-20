@@ -31,8 +31,8 @@ RUN curl -J -L -o /tmp/bashio.tar.gz \
 EXPOSE 2881
 
 LABEL \
-  io.hass.name="Ada Server for ${BUILD_ARCH}" \
-  io.hass.description="Ada Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
+  io.hass.name="ava Server for ${BUILD_ARCH}" \
+  io.hass.description="ava Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
   io.hass.arch="${BUILD_ARCH}" \
   io.hass.type="base" \
   io.hass.version=${BUILD_VERSION} \
@@ -40,8 +40,8 @@ LABEL \
   io.hass.base.name="debian" \
   io.hass.base.image="ghcr.io/0x77dev/ava/server" \
   maintainer="Mykhailo Marynenko <mykhailo@0x77.dev>" \
-  org.opencontainers.image.title="Ada Server for ${BUILD_ARCH}" \
-  org.opencontainers.image.description="Ada Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
+  org.opencontainers.image.title="ava Server for ${BUILD_ARCH}" \
+  org.opencontainers.image.description="ava Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
   org.opencontainers.image.vendor="Ava Add-ons" \
   org.opencontainers.image.authors="Mykhailo Marynenko <mykhailo@0x77.dev>" \
   org.opencontainers.image.licenses="GPL-3.0" \

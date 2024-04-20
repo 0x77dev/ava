@@ -1,7 +1,7 @@
 name: "Ava Server"
 description: "Self-hosted personal assistant in minutes with built-in Home Assistant integration and great extensibility and customizability."
 version: "0.0.0"
-slug: "server"
+slug: "hass_ava_server"
 init: false
 arch:
   - aarch64
