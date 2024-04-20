@@ -1,6 +1,6 @@
 name: "Ollama"
 description: "Ollama addon"
-version: "0.0.0"
+version: "0.1.32"
 slug: "ollama"
 init: false
 arch:
@@ -8,7 +8,7 @@ arch:
   - amd64
 ports:
   11434/tcp: 11434
-image: ollama/ollama:latest
+image: docker.io/ollama/ollama
 homeassistant_api: true
 ingress: true
 ingress_port: 11434
