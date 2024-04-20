@@ -3,7 +3,7 @@ FROM ${BUILD_FROM} as base
 
 FROM base as workspace
 ENV NODE_ENV=production
-WORKDIR /usr/src/ada
+WORKDIR /usr/src/app
 COPY . .
 
 FROM workspace as build
@@ -13,7 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
 RUN bun install --frozen-lockfile
 
 FROM workspace
-COPY --from=build /usr/src/ava/node_modules /usr/src/ava/node_modules
+COPY --from=build /usr/src/app/node_modules /usr/src/app/node_modules
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
   jq curl
 
@@ -40,7 +40,7 @@ LABEL \
   io.hass.base.name="debian" \
   io.hass.base.image="ghcr.io/0x77dev/ava/server" \
   maintainer="Mykhailo Marynenko <mykhailo@0x77.dev>" \
-  org.opencontainers.image.title="Ada Server for ${BUILD_ARCH}" \
+  org.opencontainers.image.title="Ada Server for ${BUILD_ARCH" \
   org.opencontainers.image.description="Ada Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
   org.opencontainers.image.vendor="Ava Add-ons" \
   org.opencontainers.image.authors="Mykhailo Marynenko <mykhailo@0x77.dev>" \
