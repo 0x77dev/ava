@@ -21,5 +21,8 @@
     "xml-js": "^1.6.11",
     "znv": "^0.4.0",
     "zod": "^3.22.5"
-  }
+  },
+  "trustedDependencies": [
+    "node-llama-cpp"
+  ]
 }

@@ -1,5 +1,4 @@
-import type { CreateChatCompletionRequest, CreateChatCompletionResponse } from "@ava/oai-openapi";
-import { t } from "elysia";
+import type { CreateChatCompletionRequest, CreateChatCompletionResponse } from "@ava/oai-types";
 import type { ElysiaApp } from "~/index";
 import { executeChatCompletion } from "~/services/oai/lang";
 

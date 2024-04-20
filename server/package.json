@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@ava/lang": "workspace:../packages/lang",
-    "@ava/oai-openapi": "workspace:../packages/oai-openapi",
+    "@ava/oai-types": "workspace:../packages/oai-types",
     "@ava/skills-homeassistant": "workspace:../packages/skills-homeassistant",
     "@bogeychan/elysia-logger": "^0.0.21",
     "@elysiajs/swagger": "^1.0.3",
@@ -21,5 +21,10 @@
   "devDependencies": {
     "bun-types": "latest"
   },
-  "module": "src/index.js"
+  "module": "src/index.js",
+  "trustedDependencies": [
+    "@ava/oai-openapi",
+    "@ava/lang",
+    "node-llama-cpp"
+  ]
 }

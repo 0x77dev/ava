@@ -1,4 +1,4 @@
-import type { ChatCompletionRequestMessage, CreateChatCompletionRequest, CreateChatCompletionResponse } from "@ava/oai-openapi"
+import type { ChatCompletionRequestMessage, CreateChatCompletionRequest, CreateChatCompletionResponse } from "@ava/oai-types"
 import { v4 } from "uuid"
 import { getAssistant } from "../assistant"
 import { AIMessage, HumanMessage, SystemMessage } from "@ava/lang"
