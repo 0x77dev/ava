@@ -8,7 +8,7 @@ arch:
   - amd64
 ports:
   2881/tcp: 2881
-image: ghcr.io/0x77dev/ava/server:edge
+image: ghcr.io/0x77dev/ava/server
 homeassistant_api: true
 ingress: true
 ingress_port: 2881
