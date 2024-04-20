@@ -9,6 +9,9 @@ arch:
 ports:
   11434/tcp: 11434
 image: docker.io/ollama/ollama
-homeassistant_api: true
 ingress: true
 ingress_port: 11434
+map:
+  - config:rw
+environment:
+  OLLAMA_MODELS: "/config/ollama"
