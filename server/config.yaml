@@ -17,19 +17,19 @@ options:
   llm:
     namespace: anthropic
     token: "your token"
-    model: claude-3-opus-20240229
+    name: claude-3-opus-20240229
   embeddings:
     namespace: ollama
     baseURL: "http://04c4e5a1-ollama:11434"
-    model: nomic-embed-text
+    name: nomic-embed-text
 schema:
   llm:
     namespace: str
-    model: "str"
+    name: "str"
     token: "str?"
     baseURL: "str?"
   embeddings:
     namespace: str
-    model: "str"
+    name: "str"
     token: "str?"
     baseURL: "str?"
