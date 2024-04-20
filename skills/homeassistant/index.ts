@@ -1,4 +1,4 @@
-import { createAssistant, type ToolInterface } from '@ava/lang'
+import { type ToolInterface } from '@ava/lang'
 import { entities } from './tools/entities'
 import { call, services } from './tools/services'
 

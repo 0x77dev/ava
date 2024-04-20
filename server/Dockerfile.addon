@@ -52,4 +52,4 @@ LABEL \
   org.opencontainers.image.revision=${BUILD_REF} \
   org.opencontainers.image.version=${BUILD_VERSION}
 
-CMD ["bashio", "/usr/src/app/server/hass-entrypoint.sh"]
+CMD ["bun", "run", "/usr/src/app/server/src/index.ts"]
