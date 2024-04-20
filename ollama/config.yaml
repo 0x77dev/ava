@@ -1,5 +1,5 @@
 name: "Ollama"
-description: "Ollama addon"
+description: "The easiest way to get up and running with large language models locally."
 version: "0.1.32"
 slug: "ollama"
 init: false
