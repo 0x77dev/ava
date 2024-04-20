@@ -3,7 +3,7 @@ FROM ${BUILD_FROM} as base
 
 FROM base as workspace
 ENV NODE_ENV=production
-WORKDIR /usr/src/app
+WORKDIR /usr/src/ada
 COPY . .
 
 FROM workspace as build
