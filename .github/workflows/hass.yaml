@@ -6,6 +6,8 @@ on:
     branches:
       - main
   release:
+    types:
+      - published
 
 permissions:
   contents: read
