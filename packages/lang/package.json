@@ -17,13 +17,11 @@
     "easydl": "^1.1.1",
     "hnswlib-node": "^3",
     "langchain": "^0.1.34",
-    "node-llama-cpp": "^2.8.9",
     "xml-js": "^1.6.11",
     "znv": "^0.4.0",
     "zod": "^3.22.5"
   },
   "trustedDependencies": [
-    "node-llama-cpp",
     "hnswlib-node"
   ]
 }

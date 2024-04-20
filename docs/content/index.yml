@@ -39,7 +39,7 @@ features:
   items:
     # TODO: add "to" links
     - title: 'Supports almost all major LLMs'
-      description: 'Support for OpenAI, Anthropic, Llama.cpp and Ollama out of the box.'
+      description: 'Support for OpenAI, Anthropic, and Ollama out of the box.'
       icon: 'i-ph-brain-duotone'
       target: '_blank'
     - title: 'Built-in Home Assistant integration'

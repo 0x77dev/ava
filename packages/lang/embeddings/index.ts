@@ -1,5 +1,4 @@
 import { EMBEDDINGS } from "./config";
-import { llamaCpp } from "./providers/llama-cpp";
 import { ollama } from "./providers/ollama";
 import { openai } from "./providers/openai";
 
@@ -9,8 +8,6 @@ export const createEmbeddings = () => {
       return ollama(EMBEDDINGS)
     case "openai":
       return openai(EMBEDDINGS)
-    case "llama-cpp":
-      return llamaCpp(EMBEDDINGS)
   }
 }
 
