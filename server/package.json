@@ -25,6 +25,7 @@
   "trustedDependencies": [
     "@ava/oai-openapi",
     "@ava/lang",
-    "node-llama-cpp"
+    "node-llama-cpp",
+    "hnswlib-node"
   ]
 }

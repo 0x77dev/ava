@@ -23,6 +23,7 @@
     "zod": "^3.22.5"
   },
   "trustedDependencies": [
-    "node-llama-cpp"
+    "node-llama-cpp",
+    "hnswlib-node"
   ]
 }
