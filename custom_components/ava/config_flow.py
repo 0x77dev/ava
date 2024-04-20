@@ -11,7 +11,7 @@ import voluptuous as vol
 import yaml
 
 from homeassistant import config_entries
-from homeassistant.const import CONF_API_KEY, CONF_NAME
+from homeassistant.const import CONF_API_KEY, CONF_NAME, DEFAULT_CONF_API_KEY
 from homeassistant.core import HomeAssistant
 from homeassistant.data_entry_flow import FlowResult
 from homeassistant.helpers.selector import (
@@ -37,7 +37,7 @@ _LOGGER = logging.getLogger(__name__)
 STEP_USER_DATA_SCHEMA = vol.Schema(
     {
         vol.Optional(CONF_NAME): str,
-        vol.Required(CONF_API_KEY): str,
+        vol.Optional(CONF_API_KEY, default=DEFAULT_CONF_API_KEY): str,
         vol.Optional(CONF_BASE_URL, default=DEFAULT_CONF_BASE_URL): str,
         vol.Optional(
             CONF_SKIP_AUTHENTICATION, default=DEFAULT_SKIP_AUTHENTICATION
@@ -59,6 +59,8 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> None:
     Data has the keys from STEP_USER_DATA_SCHEMA with values provided by the user.
     """
     api_key = data[CONF_API_KEY]
+    if not api_key:
+        return
     base_url = data.get(CONF_BASE_URL)
     skip_authentication = data.get(CONF_SKIP_AUTHENTICATION)
 

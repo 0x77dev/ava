@@ -1,0 +1,6 @@
+---
+build_from:
+  aarch64: oven/bun:1-debian
+  amd64: oven/bun:1-debian
+codenotary:
+  signer: mykhailo@0x77.dev

@@ -1,0 +1,55 @@
+ARG BUILD_FROM=oven/bun:1-debian
+FROM ${BUILD_FROM}
+
+FROM base as workspace
+ENV NODE_ENV=production
+WORKDIR /usr/src/app
+COPY . .
+
+FROM workspace as build
+COPY --from=node:lts-bullseye /usr/local/bin/node /usr/local/bin/node
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
+  build-essential python3 llvm clang
+RUN bun install --frozen-lockfile
+
+FROM workspace
+COPY --from=build /usr/src/ava/node_modules /usr/src/ava/node_modules
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
+  jq curl
+
+ARG BASHIO_VERSION="v0.16.2"
+
+RUN curl -J -L -o /tmp/bashio.tar.gz \
+  "https://github.com/hassio-addons/bashio/archive/${BASHIO_VERSION}.tar.gz" \
+  && mkdir /tmp/bashio \
+  && tar zxvf \
+  /tmp/bashio.tar.gz \
+  --strip 1 -C /tmp/bashio \
+  && mv /tmp/bashio/lib /usr/lib/bashio \
+  && ln -s /usr/lib/bashio/bashio /usr/bin/bashio
+
+EXPOSE 2881
+
+LABEL \
+  io.hass.name="Ada Server for ${BUILD_ARCH}" \
+  io.hass.description="Ada Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
+  io.hass.arch="${BUILD_ARCH}" \
+  io.hass.type="base" \
+  io.hass.version=${BUILD_VERSION} \
+  io.hass.base.version=${BUILD_VERSION} \
+  io.hass.base.name="debian" \
+  io.hass.base.image="ghcr.io/0x77dev/ava/server" \
+  maintainer="Mykhailo Marynenko <mykhailo@0x77.dev>" \
+  org.opencontainers.image.title="Ada Server for ${BUILD_ARCH" \
+  org.opencontainers.image.description="Ada Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
+  org.opencontainers.image.vendor="Ava Add-ons" \
+  org.opencontainers.image.authors="Mykhailo Marynenko <mykhailo@0x77.dev>" \
+  org.opencontainers.image.licenses="GPL-3.0" \
+  org.opencontainers.image.url="https://github.com/${BUILD_REPOSITORY}" \
+  org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
+  org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
+  org.opencontainers.image.created=${BUILD_DATE} \
+  org.opencontainers.image.revision=${BUILD_REF} \
+  org.opencontainers.image.version=${BUILD_VERSION}
+
+CMD ["/usr/src/ava/server/hass-entrypoint.sh"]

@@ -1,0 +1,11 @@
+---
+name: Ship Home Assistant Add-on
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  workflows:
+    uses: hassio-addons/workflows/.github/workflows/base-deploy.yaml@main

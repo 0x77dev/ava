@@ -6,6 +6,7 @@ CONF_BASE_URL = "base_url"
 DEFAULT_CONF_BASE_URL = "http://oai-ava/v1"
 CONF_SKIP_AUTHENTICATION = "skip_authentication"
 DEFAULT_SKIP_AUTHENTICATION = True
+DEFAULT_CONF_API_KEY = "sk--none"
 
 EVENT_AUTOMATION_REGISTERED = "automation_registered_via_ava"
 EVENT_CONVERSATION_FINISHED = "ava.conversation.finished"
