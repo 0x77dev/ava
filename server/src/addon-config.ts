@@ -8,7 +8,7 @@ export const injectHassOptions = async () => {
     return
   }
 
-  const raw  = await readFile(OPTIONS_PATH, 'utf8')
+  const raw = await readFile(OPTIONS_PATH, 'utf8')
   const options = JSON.parse(raw)
 
   console.log('injecting hass options', options)
