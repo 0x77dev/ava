@@ -18,5 +18,10 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "trustedDependencies": [
+    "@ava/docs",
+    "@ava/oai-openapi",
+    "node-llama-cpp"
+  ]
 }
