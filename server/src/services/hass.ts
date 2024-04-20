@@ -11,6 +11,8 @@ export const injectHassOptions = async () => {
   const raw  = await readFile(OPTIONS_PATH, 'utf8')
   const options = JSON.parse(raw)
 
+  console.log('injecting hass options', options)
+
   if (options.llm) {
     process.env.LLM = JSON.stringify(options.llm)
   }
@@ -24,3 +26,5 @@ export const injectHassOptions = async () => {
     "url": "ws://supervisor/core/websocket",
   })
 }
+
+await injectHassOptions()

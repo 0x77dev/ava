@@ -1,6 +1,3 @@
-import { injectHassOptions } from './services/hass'
-await injectHassOptions()
-
 import { Elysia } from 'elysia'
 import { swagger } from './services/swagger'
 import { autoload } from "elysia-autoload"
