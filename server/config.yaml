@@ -1,14 +1,34 @@
 name: "Ava Server"
 description: "Self-hosted personal assistant in minutes with built-in Home Assistant integration and great extensibility and customizability."
 version: "0.0.0"
-slug: "hass_ava_server"
+slug: "server"
 init: false
 arch:
   - aarch64
   - amd64
 ports:
   2881/tcp: 2881
-image: ghcr.io/0x77dev/ava/hass_ava_server
+image: ghcr.io/0x77dev/ava/server:edge
 homeassistant_api: true
 ingress: true
 ingress_port: 2881
+options:
+  llm:
+    namespace: anthropic
+    token: "your token"
+    model: claude-3-opus-20240229
+  embeddings:
+    namespace: ollama
+    baseURL: "http://04c4e5a1-ollama:11434"
+    model: nomic-embed-text
+schema:
+  llm:
+    namespace: str
+    model: "str"
+    token: "str?"
+    baseURL: "str?"
+  embeddings:
+    namespace: str
+    model: "str"
+    token: "str?"
+    baseURL: "str?"

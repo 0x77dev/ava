@@ -1,0 +1,14 @@
+name: "Ollama"
+description: "Ollama addon"
+version: "0.0.0"
+slug: "ollama"
+init: false
+arch:
+  - aarch64
+  - amd64
+ports:
+  11434/tcp: 11434
+image: ollama/ollama:latest
+homeassistant_api: true
+ingress: true
+ingress_port: 11434

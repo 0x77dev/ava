@@ -38,7 +38,7 @@ LABEL \
   io.hass.version=${BUILD_VERSION} \
   io.hass.base.version=${BUILD_VERSION} \
   io.hass.base.name="debian" \
-  io.hass.base.image="ghcr.io/0x77dev/ava/hass_ava_server" \
+  io.hass.base.image="ghcr.io/0x77dev/ava/server" \
   maintainer="Mykhailo Marynenko <mykhailo@0x77.dev>" \
   org.opencontainers.image.title="ava Server for ${BUILD_ARCH}" \
   org.opencontainers.image.description="ava Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
