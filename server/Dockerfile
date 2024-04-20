@@ -40,7 +40,7 @@ LABEL \
   io.hass.base.name="debian" \
   io.hass.base.image="ghcr.io/0x77dev/ava/server" \
   maintainer="Mykhailo Marynenko <mykhailo@0x77.dev>" \
-  org.opencontainers.image.title="Ada Server for ${BUILD_ARCH" \
+  org.opencontainers.image.title="Ada Server for ${BUILD_ARCH}" \
   org.opencontainers.image.description="Ada Server Add-on: ${BUILD_ARCH} bun debian v1 image" \
   org.opencontainers.image.vendor="Ava Add-ons" \
   org.opencontainers.image.authors="Mykhailo Marynenko <mykhailo@0x77.dev>" \
