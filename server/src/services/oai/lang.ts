@@ -1,11 +1,20 @@
-import type { ChatCompletionRequestMessage, CreateChatCompletionRequest, CreateChatCompletionResponse } from "@ava/oai-types"
+import type {
+  ChatCompletionRequestMessage,
+  CreateChatCompletionRequest,
+  CreateChatCompletionResponse
+} from "@ava/oai-types"
 import { v4 } from "uuid"
 import { getAssistant } from "../assistant"
-import { AIMessage, HumanMessage, SystemMessage } from "@ava/lang"
+import {
+  AIMessage,
+  HumanMessage,
+  SystemMessage,
+  parseXmlLikeResponse
+} from "@ava/lang"
 
 const oaiToLangMessage = (messages: ChatCompletionRequestMessage[]) => {
-  return messages.map(({role, content}) => {
-    if(!content) return
+  return messages.map(({ role, content }) => {
+    if (!content) return
 
     switch (role) {
       case 'user':
@@ -24,7 +33,7 @@ export const executeChatCompletion = async (req: CreateChatCompletionRequest): P
   const id = v4()
   const assistant = await getAssistant()
 
-  if(req.stream) {
+  if (req.stream) {
     throw new Error('streaming is not supported yet')
   }
 
@@ -35,7 +44,6 @@ export const executeChatCompletion = async (req: CreateChatCompletionRequest): P
   const input = lastMessage.content
   const chat_history = oaiToLangMessage(req.messages.slice(0, -1))
 
-
   const res = await assistant.invoke({
     input,
     chat_history,
@@ -45,6 +53,8 @@ export const executeChatCompletion = async (req: CreateChatCompletionRequest): P
     }
   })
 
+  const parsed = parseXmlLikeResponse(res.output)
+
   return {
     id,
     model: 'ava',
@@ -52,8 +62,9 @@ export const executeChatCompletion = async (req: CreateChatCompletionRequest): P
       {
         index: 0,
         finish_reason: 'stop',
-        message: res.output,
-      }
+        message: parsed.message,
+        meta: parsed.data
+      } as CreateChatCompletionResponse['choices'][number] & { meta: any }
     ],
     object: 'chat.completion',
     created: Math.floor(Date.now() / 1000)

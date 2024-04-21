@@ -21,10 +21,13 @@ export const injectHassOptions = async () => {
     process.env.EMBEDDINGS = JSON.stringify(options.embeddings)
   }
 
-  process.env.HOMEASSISTANT = JSON.stringify({
-    "token": process.env.SUPERVISOR_TOKEN,
-    "url": "ws://supervisor/core/websocket",
-  })
+  if (process.env.SUPERVISOR_TOKEN) {
+    process.env.HOMEASSISTANT = JSON.stringify({
+      "token": process.env.SUPERVISOR_TOKEN,
+      "url": "ws://supervisor:80/core/websocket",
+      "supervisor": true
+    })
+  }
 }
 
 await injectHassOptions()

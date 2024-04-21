@@ -1,4 +1,4 @@
-import { DynamicTool, HNSWLib, Document, createEmbeddings, formatAnswer } from "@ava/lang";
+import { DynamicTool, HNSWLib, Document, createEmbeddings, formatToolAnswer } from "@ava/lang";
 import { entitiesColl, type HassEntities } from "home-assistant-js-websocket";
 import { hass } from "../provider";
 import { HOMEASSISTANT } from "../config";
@@ -20,7 +20,7 @@ const entitiesToSearchable = async (entities: HassEntities, embeddings: Awaited<
       lastChanged: entity.last_changed,
       lastUpdated: entity.last_updated,
     }
-    const text = formatAnswer(data)
+    const text = formatToolAnswer(data)
 
     return [entityId, {
       text,
@@ -76,14 +76,14 @@ const createStore = async () => {
     resolve()
   })
 
-  console.log('waiting for entities to load')
+  console.log('[ha] waiting for entities to load')
   await promise
 
   return async (query: string) => {
-    console.log('searching for', query)
+    console.log('[ha] searching for', query)
 
     const results = await store.similaritySearchWithScore(query, 5)
-    
+
     return results.map(([{ pageContent, metadata }, score]) => {
       console.log('found', metadata.entityId, 'for', query, 'with score', score)
       return pageContent

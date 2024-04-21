@@ -1,4 +1,4 @@
-import { Document, DynamicStructuredTool, DynamicTool, HNSWLib, createEmbeddings, formatAnswer } from "@ava/lang";
+import { Document, DynamicStructuredTool, DynamicTool, HNSWLib, createEmbeddings, formatToolAnswer } from "@ava/lang";
 import { servicesColl, type HassServices } from "home-assistant-js-websocket";
 import { hass } from "../provider";
 import { z } from "zod";
@@ -13,7 +13,7 @@ const servicesToSearchable = async (services: HassServices, embeddings: Awaited<
   const entries = Object.entries(services)
 
   return Object.fromEntries(await Promise.all(entries.map(async ([serviceId, service]): Promise<[string, Searchable]> => {
-    const text = formatAnswer(service)
+    const text = formatToolAnswer(service)
 
     return [serviceId, {
       text,
@@ -61,7 +61,7 @@ const createStore = async () => {
     console.log('searching for', query)
 
     const results = await store.similaritySearchWithScore(query, 5)
-    
+
     return results.map(([{ pageContent, metadata }, score]) => {
       console.log('found', metadata.entityId, 'for', query, 'with score', score)
       return pageContent
@@ -97,7 +97,7 @@ export const call = () => {
       const { domain, service, data, target } = input
       const res = await callService(hass, domain, service, data, target)
 
-      return `success: ${formatAnswer(res as any)}`
+      return `success: ${formatToolAnswer(res as any)}`
     }
   })
 }
