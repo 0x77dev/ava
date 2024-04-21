@@ -24,13 +24,13 @@ const servicesToSearchable = async (services: HassServices, embeddings: Awaited<
 
 const createStore = async () => {
   const embeddings = await createEmbeddings()
-  let serviceToSearchable: Record<string, Searchable> = {}
   const coll = servicesColl(hass)
-  let resolve: (...any: any) => void = () => {}
-  const promise = new Promise(r => resolve = r)
   let store = new HNSWLib(embeddings, {
     space: 'cosine'
   })
+
+  let serviceToSearchable: Record<string, Searchable> = {}
+
   coll.subscribe(async (services) => {
     serviceToSearchable = { ...serviceToSearchable, ...await servicesToSearchable(services, embeddings) }
     store = new HNSWLib(embeddings, {
@@ -50,12 +50,13 @@ const createStore = async () => {
     await store.addVectors(vectors, docs)
 
     console.log('updated services store with', Object.keys(servicesToSearchable).length)
-    resolve()
   })
-  await coll.refresh()
 
-  console.log('waiting for services to load')
-  await promise
+  try {
+    await coll.refresh()
+  } catch (error) {
+    console.warn(error)
+  }
 
   return async (query: string) => {
     console.log('searching for', query)

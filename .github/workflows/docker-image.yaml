@@ -1,5 +1,5 @@
 ---
-name: Ship Home Assistant Add-on
+name: Ship Docker Image
 
 on:
   push:

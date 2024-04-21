@@ -32,13 +32,13 @@ const entitiesToSearchable = async (entities: HassEntities, embeddings: Awaited<
 
 const createStore = async () => {
   const embeddings = await createEmbeddings()
-  let entityToSearchable: Record<string, Searchable> = {}
   const coll = entitiesColl(hass)
-  let resolve: (...any: any) => void = () => {}
-  const promise = new Promise(r => resolve = r)
   let store = new HNSWLib(embeddings, {
     space: 'cosine'
   })
+
+  let entityToSearchable: Record<string, Searchable> = {}
+
   coll.subscribe(async (entities) => {
     const updatedSince = Object.fromEntries(
       Object.entries(entities)
@@ -73,11 +73,13 @@ const createStore = async () => {
     await store.addVectors(vectors, docs)
 
     console.log('updated entities store with', Object.keys(updatedSince).length, 'updates, index size now is:', Object.keys(entityToSearchable).length)
-    resolve()
   })
 
-  console.log('[ha] waiting for entities to load')
-  await promise
+  try {
+    await coll.refresh()
+  } catch (error) {
+    console.warn(error)
+  }
 
   return async (query: string) => {
     console.log('[ha] searching for', query)
