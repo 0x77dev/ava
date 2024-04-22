@@ -2,7 +2,7 @@
   "name": "@ava/skill-dynamic",
   "module": "index.ts",
   "type": "module",
-  "version": "0.0.0-hotfix.1",
+  "version": "0.0.1",
   "devDependencies": {
     "@types/bun": "latest"
   },
