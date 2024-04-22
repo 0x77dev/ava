@@ -58,5 +58,5 @@ await $`bun install`;
 
 console.log('committing changes');
 await $`git commit -m "${newVersion}"`;
-await $`git tag -a ${newVersion}`;
+await $`git tag ${newVersion}`;
 await $`git push origin main --tags`;
