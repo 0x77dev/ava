@@ -1,0 +1,18 @@
+name: "Redis Stack"
+description: "Redis Stack installs a Redis server with additional database capabilities and the RedisInsight."
+version: "7.2.0-v10"
+slug: "redis"
+init: false
+arch:
+  - aarch64
+  - amd64
+url: https://redis.io/docs/latest/operate/oss_and_stack/install/install-stack/docker/#redisredis-stack
+ports:
+  6379/tcp: 6379
+  8001/tcp: 8001
+image: docker.io/redis/redis-stack
+ingress: true
+ingress_port: 8001
+ingress_stream: true
+map:
+  - config:rw
