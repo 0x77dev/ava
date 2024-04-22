@@ -12,6 +12,7 @@ ports:
 image: docker.io/ollama/ollama
 ingress: true
 ingress_port: 11434
+ingress_stream: true
 map:
   - config:rw
 environment:

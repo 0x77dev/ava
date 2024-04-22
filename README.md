@@ -12,7 +12,7 @@ For documentation, visit the project website: [ava.0x77.dev](https://ava.0x77.de
 
 -  **Supports major LLMs**: OpenAI, Anthropic, and Ollama supported by default.
 -  **Home Assistant Integration**: Control Home Assistant devices and get entity information.
--  **Extensible _(work in progress)_**: Easily add new skills via custom HTTP endpoints.
+-  **Extensible _(work in progress)_**: Easily add new skill via custom HTTP endpoints.
 -  **Customizable**: Highly configurable through environment variables.
 -  **Fully private**: Can be self-hosted for complete data control.
 -  **OpenAI compatible endpoints**: Chat with Ava using OpenAI-compatible chat completion.

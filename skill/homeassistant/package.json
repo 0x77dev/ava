@@ -1,5 +1,5 @@
 {
-  "name": "@ava/skills-homeassistant",
+  "name": "@ava/skill-homeassistant",
   "module": "index.ts",
   "type": "module",
   "dependencies": {

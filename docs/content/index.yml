@@ -48,7 +48,7 @@ features:
       target: '_blank'
     - title: 'Extensible'
       wip: true
-      description: 'Easily add new skills via custom HTTP endpoints'
+      description: 'Easily add new skill via custom HTTP endpoints'
       icon: 'i-heroicons-sparkles-20-solid'
       target: '_blank'
     - title: 'Customizable'

@@ -10,8 +10,13 @@ export const getAssistant = async () => {
   const tools: ToolInterface[] = []
 
   if (process.env.HOMEASSISTANT) {
-    const { createHomeAssistantToolkit } = await import('@ava/skills-homeassistant')
+    const { createHomeAssistantToolkit } = await import('@ava/skill-homeassistant')
     tools.push(...await createHomeAssistantToolkit())
+  }
+
+  if (process.env.SKILLS) {
+    const { createDynamicToolkit } = await import('@ava/skill-dynamic')
+    tools.push(...await createDynamicToolkit())
   }
 
   assistant = await createAssistant(tools)

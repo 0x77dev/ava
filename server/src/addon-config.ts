@@ -21,6 +21,10 @@ export const injectHassOptions = async () => {
     process.env.EMBEDDINGS = JSON.stringify(options.embeddings)
   }
 
+  if (options.skills) {
+    process.env.SKILLS = JSON.stringify(options.skills)
+  }
+
   if (process.env.SUPERVISOR_TOKEN) {
     process.env.HOMEASSISTANT = JSON.stringify({
       "token": process.env.SUPERVISOR_TOKEN,

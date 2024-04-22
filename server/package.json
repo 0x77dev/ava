@@ -8,7 +8,8 @@
   "dependencies": {
     "@ava/lang": "workspace:../packages/lang",
     "@ava/oai-types": "workspace:../packages/oai-types",
-    "@ava/skills-homeassistant": "workspace:../packages/skills-homeassistant",
+    "@ava/skill-homeassistant": "workspace:../skill/homeassistant",
+    "@ava/skill-dynamic": "workspace:../skill/dynamic",
     "@bogeychan/elysia-logger": "^0.0.21",
     "@elysiajs/swagger": "^1.0.3",
     "elysia": "latest",

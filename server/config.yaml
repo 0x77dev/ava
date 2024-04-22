@@ -1,6 +1,6 @@
 name: "Ava Server"
 description: "Self-hosted personal assistant in minutes with built-in Home Assistant integration and great extensibility and customizability"
-version: "edge"
+version: "0.0.0"
 slug: "server"
 init: false
 arch:
@@ -13,6 +13,7 @@ image: ghcr.io/0x77dev/ava/server
 homeassistant_api: true
 ingress: true
 ingress_port: 2881
+ingress_stream: true
 options:
   llm:
     namespace: anthropic
@@ -21,15 +22,21 @@ options:
   embeddings:
     namespace: ollama
     baseURL: "http://04c4e5a1-ollama:11434"
-    name: nomic-embed-text
+    name: snowflake-arctic-embed:22m
+  skills: []
 schema:
   llm:
-    namespace: str
+    namespace: list(anthropic|openai|ollama)
     name: "str"
     token: "str?"
     baseURL: "str?"
   embeddings:
-    namespace: str
+    namespace: list(openai|ollama)
     name: "str"
     token: "str?"
     baseURL: "str?"
+  skills:
+    - name: "str"
+      description: "str"
+      returnDirect: "bool?"
+      url: "str"

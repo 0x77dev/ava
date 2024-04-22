@@ -5,7 +5,7 @@
   "license": "GPL-3.0",
   "workspaces": [
     "packages/*",
-    "skills/*",
+    "skill/*",
     "docs",
     "server"
   ],

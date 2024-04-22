@@ -1,0 +1,18 @@
+{
+  "name": "@ava/skill-dynamic",
+  "module": "index.ts",
+  "type": "module",
+  "version": "0.0.0",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@ava/lang": "workspace:../../packages/lang",
+    "got": "^14.2.1",
+    "znv": "^0.4.0",
+    "zod": "^3.23.0"
+  }
+}
