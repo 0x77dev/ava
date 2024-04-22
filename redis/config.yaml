@@ -1,5 +1,5 @@
 name: "Redis Stack"
-description: "Redis Stack installs a Redis server with additional database capabilities and the RedisInsight."
+description: "Redis Stack installs a Redis server with additional database capabilities and the RedisInsight"
 version: "7.2.0-v10"
 slug: "redis"
 init: false

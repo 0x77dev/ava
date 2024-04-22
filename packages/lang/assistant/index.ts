@@ -30,9 +30,13 @@ export const parseXmlLikeResponse = (input: string) => {
       ignoreInstruction: true,
     })
 
-    const message = Array.isArray(data.root._text) ?
-      data.root._text.join(' ') :
-      data.root._text
+    const result = data.root?._text?.length ?
+      data.root._text :
+      data.root.result._text
+
+    const message = Array.isArray(result) ?
+      result.join(' ') :
+      result
 
     return {
       message,
