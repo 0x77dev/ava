@@ -24,5 +24,6 @@
   },
   "trustedDependencies": [
     "hnswlib-node"
-  ]
+  ],
+  "version": "0.0.0-hotfix.1"
 }

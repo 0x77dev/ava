@@ -11,12 +11,19 @@ export const createDynamicToolkit = async (): Promise<ToolInterface[]> => {
       description: skill.description,
       returnDirect: skill.returnDirect,
       async func(body) {
-        const response = await http.post(skill.url, {
-          body,
-          responseType: 'json'
-        }).text()
+        const res = await fetch(skill.url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        })
 
-        return response
+        if (!res.ok) {
+          throw new Error(`Failed to call skill ${skill.name}, status: ${res.status}, body: ${await res.text()}`)
+        }
+
+        return res.text()
       }
     })
   })

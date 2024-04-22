@@ -1,7 +1,9 @@
-name: "Ava Server"
-description: "Self-hosted personal assistant in minutes with built-in Home Assistant integration and great extensibility and customizability"
-version: "0.0.0"
-slug: "server"
+name: Ava Server
+description: >-
+  Self-hosted personal assistant in minutes with built-in Home Assistant
+  integration and great extensibility and customizability
+version: 0.0.0-hotfix.1
+slug: server
 init: false
 arch:
   - aarch64
@@ -17,26 +19,26 @@ ingress_stream: true
 options:
   llm:
     namespace: anthropic
-    token: "your token"
+    token: your token
     name: claude-3-opus-20240229
   embeddings:
     namespace: ollama
-    baseURL: "http://04c4e5a1-ollama:11434"
+    baseURL: http://04c4e5a1-ollama:11434
     name: snowflake-arctic-embed:22m
   skills: []
 schema:
   llm:
     namespace: list(anthropic|openai|ollama)
-    name: "str"
-    token: "str?"
-    baseURL: "str?"
+    name: str
+    token: str?
+    baseURL: str?
   embeddings:
     namespace: list(openai|ollama)
-    name: "str"
-    token: "str?"
-    baseURL: "str?"
+    name: str
+    token: str?
+    baseURL: str?
   skills:
-    - name: "str"
-      description: "str"
-      returnDirect: "bool?"
-      url: "str"
+    - name: str
+      description: str
+      returnDirect: bool?
+      url: str
