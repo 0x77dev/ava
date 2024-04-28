@@ -1,6 +1,6 @@
 name: "Ollama"
 description: "The easiest way to get up and running with large language models locally"
-version: "0.1.32"
+version: "0.1.33-rc5"
 slug: "ollama"
 init: false
 arch:
@@ -17,3 +17,5 @@ map:
   - config:rw
 environment:
   OLLAMA_MODELS: "/config/ollama"
+  OLLAMA_NUM_PARALLEL: "4"
+  OLLAMA_MAX_LOADED_MODELS: "4"
