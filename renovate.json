@@ -22,17 +22,18 @@
         "addon",
         "docker"
       ],
-      "commitMessageExtra": "to {{#if isMajor}}v{{{newMajor}}}{{else}}{{#if isSingleVersion}}v{{{toVersion}}}{{else}}{{{newValue}}}{{/if}}{{/if}}",
+      "commitMessageExtra": "to {{#if isMajor}}v{{{newMajor}}}{{else}}{{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{{newValue}}}{{/if}}{{/if}}",
       "commitMessageTopic": "{{depName}} add-on Docker image",
       "datasourceTemplate": "docker",
-      "extractVersion": "^(?<version>.*)$",
       "matchDepTypes": [
         "docker"
       ],
-      "matchPaths": [
+      "matchFileNames": [
         "**/config.yaml"
       ],
-      "packagePattern": "(?<registry>\\S+\\.\\S+)/(?<depName>[a-z0-9-]+/[a-z0-9-]+)(?::(?<currentValue>[a-z0-9.-]+))?",
+      "matchPackagePatterns": [
+        "(?<registry>\\S+\\.\\S+)/(?<depName>[a-z0-9-]+/[a-z0-9-]+)(?::(?<currentValue>[a-z0-9.-]+))?"
+      ],
       "prBodyColumns": [
         "Package",
         "Change",
@@ -43,13 +44,7 @@
         "Change": "{{{displayFrom}}} -> {{{displayTo}}}",
         "Type": "{{{updateType}}}"
       },
-      "updateTypes": [
-        "major",
-        "minor",
-        "patch"
-      ],
-      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:-(?<prerelease>[^+]+))?(?:\\+(?<build>.+))?$",
-      "versioningTemplate": "docker"
+      "versioning": "docker"
     },
     {
       "addLabels": [
