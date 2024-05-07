@@ -9,7 +9,7 @@ const route = useRoute()
 const { toc, seo } = useAppConfig()
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
-if (!page.value) {
+if (!page.value || !page) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
@@ -32,7 +32,7 @@ defineOgImage({
   description: page.value.description
 })
 
-const headline = computed(() => findPageHeadline(page.value))
+const headline = computed(() => findPageHeadline(page.value!))
 
 const links = computed(() => [toc?.bottom?.edit && {
   icon: 'i-heroicons-pencil-square',
