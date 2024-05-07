@@ -7,6 +7,7 @@ For documentation, visit the project website: [ava.0x77.dev](https://ava.0x77.de
 ![Maintenance](https://img.shields.io/maintenance/yes/2024)
 ![GitHub last commit](https://img.shields.io/github/last-commit/0x77dev/ava)
 [![Ship Docker Image](https://github.com/0x77dev/ava/actions/workflows/docker-image.yaml/badge.svg)](https://github.com/0x77dev/ava/actions/workflows/docker-image.yaml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2F0x77dev%2Fava.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2F0x77dev%2Fava?ref=badge_shield)
 
 ## Features
 
@@ -20,3 +21,7 @@ For documentation, visit the project website: [ava.0x77.dev](https://ava.0x77.de
 -  **Dockerized**: Available as Docker images for amd64 and aarch64.
 
 See the [documentation](https://ava.0x77.dev) for more information on how to get started.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2F0x77dev%2Fava.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2F0x77dev%2Fava?ref=badge_large)
