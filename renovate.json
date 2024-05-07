@@ -7,7 +7,7 @@
         "ollama/config.yaml"
       ],
       "matchStrings": [
-        "image:\\s*(?<depName>.+)\n\\s*version:\\s*(?<currentValue>.+)"
+        "image:\\s*(?<depName>.+)\\s*\n\\s*version:\\s*(?<currentValue>.+)"
       ]
     }
   ],
@@ -42,7 +42,7 @@
         "**/config.yaml"
       ],
       "matchPackagePatterns": [
-        "(?<registry>\\S+\\.\\S+)/(?<depName>[a-z0-9-]+/[a-z0-9-]+)(?::(?<currentValue>[a-z0-9.-]+))?"
+        "image:\\s*(?<depName>.+)\\s*\n\\s*version:\\s*(?<currentValue>.+)"
       ],
       "prBodyColumns": [
         "Package",

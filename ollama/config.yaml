@@ -1,6 +1,5 @@
 name: "Ollama"
 description: "The easiest way to get up and running with large language models locally"
-version: "0.1.33-rc5"
 slug: "ollama"
 init: false
 arch:
@@ -10,6 +9,7 @@ url: https://ollama.com
 ports:
   11434/tcp: 11434
 image: docker.io/ollama/ollama
+version: "0.1.33-rc5"
 ingress: true
 ingress_port: 11434
 ingress_stream: true
