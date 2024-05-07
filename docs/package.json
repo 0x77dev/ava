@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@iconify-json/ph": "^1.1.12",
-    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxt/eslint-config": "^0.3.0",
     "@nuxthq/studio": "^1.0.13",
     "eslint": "^9.0.0",
     "vue-tsc": "^2.0.7"
