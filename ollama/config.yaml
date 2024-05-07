@@ -9,7 +9,7 @@ url: https://ollama.com
 ports:
   11434/tcp: 11434
 image: docker.io/ollama/ollama
-version: "0.1.33"
+version: "0.1.34"
 ingress: true
 ingress_port: 11434
 ingress_stream: true
