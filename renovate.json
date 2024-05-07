@@ -4,7 +4,7 @@
     {
       "datasourceTemplate": "docker",
       "fileMatch": [
-        "config.yaml"
+        "ollama/config.yaml"
       ],
       "matchStrings": [
         "image:\\s*(?<depName>.+)\n\\s*version:\\s*(?<currentValue>.+)"
