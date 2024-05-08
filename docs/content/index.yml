@@ -37,9 +37,9 @@ hero:
     - [Add HACS Repository](https://my.home-assistant.io/redirect/hacs_repository/?owner=0x77dev&repository=ava&category=integration)
     - [Add Supervisor Add-on Repository](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/0x77dev/ava)
 
-    3. Install the Ava add-on from the Supervisor store and the Ava integration from HACS.
+    3. Install the Ollama and Ava Server add-ons and configure the Ava integration from HACS.
 
-    4. [Configure the add-on and integration in Home Assistant](/configuration), create a new assistant and you're ready to go!
+    4. Create a new assistant in Settings and you're ready to go!
 
     ::
   ::
