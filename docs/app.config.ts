@@ -30,12 +30,14 @@ export default defineAppConfig({
   footer: {
     credits: '© Mykhailo Marynenko 2024',
     colorMode: false,
-    links: [{
-      icon: 'i-simple-icons-github',
-      to: 'https://github.com/0x77dev/ava',
-      target: '_blank',
-      'aria-label': 'GitHub'
-    }]
+    links: [
+      {
+        icon: 'i-simple-icons-github',
+        to: 'https://github.com/0x77dev/ava',
+        target: '_blank',
+        'aria-label': 'GitHub'
+      }
+    ]
   },
   toc: {
     title: 'Table of Contents',

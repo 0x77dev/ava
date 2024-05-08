@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
 
 useSeoMeta({
@@ -29,7 +29,7 @@ useSeoMeta({
         <MDC :value="page.hero.title" />
       </template>
 
-      <MDC :value="page.hero.code" tag="pre" class="prose prose-primary dark:prose-invert mx-auto" />
+      <MDC :value="page.hero.code" tag="div" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
 
     <ULandingSection :title="page.features.title" :links="page.features.links">

@@ -26,7 +26,7 @@ export default defineNuxtConfig({
         'mask-position': 'center'
       },
       collections: {
-        ...getIconCollections(['heroicons', 'simple-icons', 'ph']),
+        ...getIconCollections(['heroicons', 'simple-icons', 'ph', 'icon-park']),
         ava: {
           icons: {
             'ollama-logo': {

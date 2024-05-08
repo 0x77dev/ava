@@ -22,6 +22,7 @@
     "nuxt-og-image": "^2.2.4"
   },
   "devDependencies": {
+    "@iconify-json/icon-park": "^1.1.13",
     "@iconify-json/ph": "^1.1.12",
     "@nuxt/eslint-config": "^0.3.0",
     "@nuxthq/studio": "^1.0.13",
