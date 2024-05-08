@@ -7,7 +7,7 @@ export default defineCachedEventHandler(async () => {
     status: res.status,
     statusText: res.statusText,
     headers: {
-      'Content-Type': 'text/plain'
+      'Content-Type': 'text/html; charset=utf-8'
     }
   })
 }, {
