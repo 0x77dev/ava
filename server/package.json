@@ -10,7 +10,7 @@
     "@ava/oai-types": "workspace:../packages/oai-types",
     "@ava/skill-homeassistant": "workspace:../skill/homeassistant",
     "@ava/skill-dynamic": "workspace:../skill/dynamic",
-    "@bogeychan/elysia-logger": "^0.0.21",
+    "@bogeychan/elysia-logger": "^0.0.22",
     "@elysiajs/swagger": "^1.0.3",
     "elysia": "latest",
     "elysia-autoload": "^0.2.3",
