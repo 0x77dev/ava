@@ -9,7 +9,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@langchain/anthropic": "^0.1.16",
+    "@langchain/anthropic": "^0.2.0",
     "@langchain/cloudflare": "^0.0.4",
     "@langchain/community": "^0.0.56",
     "@langchain/core": "^0.1.58",
